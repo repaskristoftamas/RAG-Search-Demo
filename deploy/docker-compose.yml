@@ -1,0 +1,146 @@
+services:
+  # --- Infrastructure ---
+
+  catalog-db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: ${CATALOG_DB_NAME}
+      POSTGRES_USER: ${CATALOG_DB_USER}
+      POSTGRES_PASSWORD: ${CATALOG_DB_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - catalog-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${CATALOG_DB_USER} -d ${CATALOG_DB_NAME}"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  keyword-db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: ${KEYWORD_DB_NAME}
+      POSTGRES_USER: ${KEYWORD_DB_USER}
+      POSTGRES_PASSWORD: ${KEYWORD_DB_PASSWORD}
+    ports:
+      - "5434:5432"
+    volumes:
+      - keyword-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${KEYWORD_DB_USER} -d ${KEYWORD_DB_NAME}"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  semantic-db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_DB: ${SEMANTIC_DB_NAME}
+      POSTGRES_USER: ${SEMANTIC_DB_USER}
+      POSTGRES_PASSWORD: ${SEMANTIC_DB_PASSWORD}
+    ports:
+      - "5435:5432"
+    volumes:
+      - semantic-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${SEMANTIC_DB_USER} -d ${SEMANTIC_DB_NAME}"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  rabbitmq:
+    image: rabbitmq:4-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # --- Application Services ---
+
+  catalog-api:
+    build:
+      context: ..
+      dockerfile: src/services/catalog/BookStore.Catalog.Api/Dockerfile
+    ports:
+      - "5010:8080"
+    environment:
+      ConnectionStrings__CatalogDb: "Host=catalog-db;Port=5432;Database=${CATALOG_DB_NAME};Username=${CATALOG_DB_USER};Password=${CATALOG_DB_PASSWORD}"
+      RabbitMQ__Host: rabbitmq
+    depends_on:
+      catalog-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+  keyword-search-api:
+    build:
+      context: ..
+      dockerfile: src/services/keyword-search/BookStore.KeywordSearch.Api/Dockerfile
+    ports:
+      - "5020:8080"
+    environment:
+      ConnectionStrings__KeywordDb: "Host=keyword-db;Port=5432;Database=${KEYWORD_DB_NAME};Username=${KEYWORD_DB_USER};Password=${KEYWORD_DB_PASSWORD}"
+      RabbitMQ__Host: rabbitmq
+    depends_on:
+      keyword-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+  semantic-search-api:
+    build:
+      context: ..
+      dockerfile: src/services/semantic-search/BookStore.SemanticSearch.Api/Dockerfile
+    ports:
+      - "5030:8080"
+    environment:
+      ConnectionStrings__SemanticDb: "Host=semantic-db;Port=5432;Database=${SEMANTIC_DB_NAME};Username=${SEMANTIC_DB_USER};Password=${SEMANTIC_DB_PASSWORD}"
+      RabbitMQ__Host: rabbitmq
+      Ollama__BaseUrl: "http://ollama:11434"
+    depends_on:
+      semantic-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+
+  gateway:
+    build:
+      context: ..
+      dockerfile: src/gateway/BookStore.Gateway/Dockerfile
+    ports:
+      - "5000:8080"
+    environment:
+      Services__KeywordSearchBaseUrl: "http://keyword-search-api:8080"
+      Services__SemanticSearchBaseUrl: "http://semantic-search-api:8080"
+      ReverseProxy__Clusters__catalog-cluster__Destinations__catalog__Address: "http://catalog-api:8080"
+      ReverseProxy__Clusters__keyword-search-cluster__Destinations__keyword-search__Address: "http://keyword-search-api:8080"
+      ReverseProxy__Clusters__semantic-search-cluster__Destinations__semantic-search__Address: "http://semantic-search-api:8080"
+    depends_on:
+      - catalog-api
+      - keyword-search-api
+      - semantic-search-api
+
+volumes:
+  catalog-db-data:
+  keyword-db-data:
+  semantic-db-data:
+  ollama-data:

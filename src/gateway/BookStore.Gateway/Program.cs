@@ -1,0 +1,32 @@
+using BookStore.Gateway.Comparison;
+using Scalar.AspNetCore;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddReverseProxy()
+    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
+
+var keywordBaseUrl = builder.Configuration["Services:KeywordSearchBaseUrl"]
+    ?? "http://localhost:5020";
+var semanticBaseUrl = builder.Configuration["Services:SemanticSearchBaseUrl"]
+    ?? "http://localhost:5030";
+
+builder.Services.AddHttpClient("KeywordSearch", client =>
+    client.BaseAddress = new Uri(keywordBaseUrl));
+builder.Services.AddHttpClient("SemanticSearch", client =>
+    client.BaseAddress = new Uri(semanticBaseUrl));
+
+builder.Services.AddSingleton<SearchServiceClient>();
+builder.Services.AddOpenApi();
+builder.Services.AddHealthChecks();
+
+var app = builder.Build();
+
+app.MapOpenApi();
+app.MapScalarApiReference();
+
+app.MapHealthChecks("/health").ExcludeFromDescription();
+app.MapComparisonEndpoints();
+app.MapReverseProxy();
+
+app.Run();

@@ -1,0 +1,254 @@
+{
+  "books": [
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "description": "A mysterious millionaire throws lavish parties in 1920s New York, all to recapture a lost love. A tale of wealth, idealism, and the American Dream's hollow core."
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "description": "A young girl in the Depression-era South witnesses her father defend a Black man falsely accused of a crime. A story of racial injustice, moral courage, and childhood innocence."
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "description": "In a totalitarian future, a man struggles against a regime that controls thought and truth. A chilling exploration of surveillance, propaganda, and the death of individual freedom."
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "description": "A spirited woman and a proud nobleman clash and gradually discover mutual respect and love. A witty comedy of manners set in Regency-era England."
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "description": "A disillusioned teenager wanders New York City after being expelled from school. A raw portrayal of adolescent alienation, identity, and the pain of growing up."
+    },
+    {
+      "title": "One Hundred Years of Solitude",
+      "author": "Gabriel García Márquez",
+      "description": "Seven generations of a family in a fictional Colombian town experience love, war, and magical events. A masterpiece of magical realism spanning a century of Latin American life."
+    },
+    {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "description": "A technologically advanced society engineers happiness through genetic manipulation and drugs. An outsider challenges the cost of sacrificing individuality for stability."
+    },
+    {
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "description": "A humble hobbit embarks on an epic quest to destroy a powerful ring and save Middle-earth from darkness. A sweeping fantasy of friendship, sacrifice, and the fight against evil."
+    },
+    {
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "description": "A destitute student commits murder and is consumed by guilt and paranoia. A psychological thriller exploring morality, redemption, and the limits of rational justification."
+    },
+    {
+      "title": "The Odyssey",
+      "author": "Homer",
+      "description": "A Greek hero endures a decade-long journey home after the Trojan War, facing monsters, gods, and temptation. An ancient epic of adventure, cunning, and the longing for home."
+    },
+    {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "description": "A young nobleman is thrust into a desert planet's political and ecological struggle for a precious resource. A science fiction epic about power, religion, and humanity's relationship with nature."
+    },
+    {
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "description": "An ordinary man is swept into space after Earth's demolition and discovers the universe is stranger than he imagined. A comedic science fiction romp about the absurdity of existence."
+    },
+    {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "description": "In a future where books are banned and burned, a fireman begins to question his society. A cautionary tale about censorship, conformity, and the power of literature."
+    },
+    {
+      "title": "Jane Eyre",
+      "author": "Charlotte Brontë",
+      "description": "An orphaned governess falls in love with her brooding employer, who harbors a dark secret. A gothic romance about independence, morality, and a woman's search for belonging."
+    },
+    {
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "description": "A young shepherd travels from Spain to Egypt in search of treasure and discovers his personal legend. An allegorical novel about following dreams and finding one's destiny."
+    },
+    {
+      "title": "Slaughterhouse-Five",
+      "author": "Kurt Vonnegut",
+      "description": "A soldier becomes unstuck in time, reliving moments of his life including the firebombing of Dresden. An anti-war novel blending science fiction with dark humor and tragedy."
+    },
+    {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "description": "A sailor joins a obsessive captain's vengeful hunt for a great white whale. An epic exploration of obsession, nature, and humanity's struggle against forces beyond its control."
+    },
+    {
+      "title": "The Brothers Karamazov",
+      "author": "Fyodor Dostoevsky",
+      "description": "Three brothers grapple with faith, doubt, and morality after their father's murder. A philosophical novel exploring free will, justice, and the existence of God."
+    },
+    {
+      "title": "Wuthering Heights",
+      "author": "Emily Brontë",
+      "description": "A fierce, consuming love between two people on the Yorkshire moors spans generations and destroys lives. A dark, passionate tale of obsession, revenge, and the supernatural."
+    },
+    {
+      "title": "The Handmaid's Tale",
+      "author": "Margaret Atwood",
+      "description": "In a theocratic dystopia, women are stripped of rights and forced into reproductive servitude. A harrowing story about power, control, and resistance under oppression."
+    },
+    {
+      "title": "The Count of Monte Cristo",
+      "author": "Alexandre Dumas",
+      "description": "A wrongfully imprisoned man escapes, discovers a fortune, and orchestrates elaborate revenge against those who betrayed him. An adventure of justice, transformation, and the price of vengeance."
+    },
+    {
+      "title": "Neuromancer",
+      "author": "William Gibson",
+      "description": "A washed-up computer hacker is hired for one last job in a neon-lit cyberpunk future. The novel that defined cyberpunk, exploring artificial intelligence, virtual reality, and corporate power."
+    },
+    {
+      "title": "The Picture of Dorian Gray",
+      "author": "Oscar Wilde",
+      "description": "A beautiful young man stays eternally youthful while his portrait ages and reflects his sins. A gothic tale of vanity, corruption, and the relationship between art and morality."
+    },
+    {
+      "title": "Frankenstein",
+      "author": "Mary Shelley",
+      "description": "A scientist creates a living being from dead tissue and faces the horrifying consequences of playing God. A gothic novel exploring creation, responsibility, and the nature of humanity."
+    },
+    {
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "description": "A father and son traverse a post-apocalyptic wasteland, clinging to hope and each other. A stark, haunting story of survival, love, and carrying the fire of civilization."
+    },
+    {
+      "title": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "description": "A sweeping account of how Homo sapiens came to dominate Earth through cognitive, agricultural, and scientific revolutions. Explores the myths and systems that bind human societies together."
+    },
+    {
+      "title": "A Brief History of Time",
+      "author": "Stephen Hawking",
+      "description": "A renowned physicist explains the universe from the Big Bang to black holes in accessible language. An introduction to cosmology, time, and the fundamental laws of nature."
+    },
+    {
+      "title": "The Stranger",
+      "author": "Albert Camus",
+      "description": "An emotionally detached man commits a senseless murder and faces trial and execution. An existentialist novel exploring the absurdity of life, society's demand for meaning, and alienation."
+    },
+    {
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "description": "Russian aristocratic families navigate love, loss, and transformation during the Napoleonic Wars. An epic historical novel weaving personal drama with sweeping reflections on history and fate."
+    },
+    {
+      "title": "Beloved",
+      "author": "Toni Morrison",
+      "description": "A former slave is haunted by the ghost of her dead daughter in post-Civil War Ohio. A powerful exploration of trauma, memory, and the enduring scars of slavery."
+    },
+    {
+      "title": "The Name of the Wind",
+      "author": "Patrick Rothfuss",
+      "description": "A legendary figure recounts his youth as an orphaned musician who becomes a powerful magician. An intricate fantasy about the nature of stories, knowledge, and the price of greatness."
+    },
+    {
+      "title": "Foundation",
+      "author": "Isaac Asimov",
+      "description": "A mathematician predicts the fall of a galactic empire and creates a plan to shorten the coming dark age. A science fiction saga about the power of knowledge and historical inevitability."
+    },
+    {
+      "title": "The Left Hand of Darkness",
+      "author": "Ursula K. Le Guin",
+      "description": "An envoy visits a planet where people have no fixed gender and must navigate alien politics and culture. A science fiction exploration of gender, identity, and the nature of loyalty."
+    },
+    {
+      "title": "Dracula",
+      "author": "Bram Stoker",
+      "description": "A group of people confront an ancient vampire who has traveled from Transylvania to England. A gothic horror classic exploring fear, desire, and the battle between modernity and the supernatural."
+    },
+    {
+      "title": "The Martian",
+      "author": "Andy Weir",
+      "description": "An astronaut stranded alone on Mars must use science and ingenuity to survive until rescue. A thrilling story of problem-solving, resilience, and human determination against impossible odds."
+    },
+    {
+      "title": "Don Quixote",
+      "author": "Miguel de Cervantes",
+      "description": "An aging man consumed by chivalric romances sets out as a self-proclaimed knight with his loyal squire. A comic masterpiece about idealism, reality, and the transformative power of imagination."
+    },
+    {
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "description": "A Nobel laureate reveals the two systems that drive how we think: fast intuition and slow deliberation. Explores cognitive biases, decision-making, and the illusion of rational thought."
+    },
+    {
+      "title": "The Remains of the Day",
+      "author": "Kazuo Ishiguro",
+      "description": "An English butler reflects on his decades of service and a relationship he never pursued. A quiet, devastating story about duty, regret, and the moments that define a life."
+    },
+    {
+      "title": "Ender's Game",
+      "author": "Orson Scott Card",
+      "description": "A gifted child is trained in orbital battle school to command humanity's defense against an alien invasion. A science fiction story about leadership, empathy, and the ethics of warfare."
+    },
+    {
+      "title": "The Wind-Up Bird Chronicle",
+      "author": "Haruki Murakami",
+      "description": "An unemployed man's search for his missing cat leads him into a surreal underworld beneath Tokyo. A dreamlike novel blending the mundane with the mystical, exploring memory and identity."
+    },
+    {
+      "title": "Anna Karenina",
+      "author": "Leo Tolstoy",
+      "description": "A married aristocrat's passionate affair with a dashing officer leads to scandal and tragedy in Imperial Russia. A sweeping examination of love, family, society, and the search for meaning."
+    },
+    {
+      "title": "The Grapes of Wrath",
+      "author": "John Steinbeck",
+      "description": "A displaced Oklahoma family migrates to California during the Great Depression, seeking work and dignity. A powerful story of poverty, injustice, and the endurance of the human spirit."
+    },
+    {
+      "title": "Snow Crash",
+      "author": "Neal Stephenson",
+      "description": "A hacker and pizza deliveryman investigates a new drug that affects people in both the real world and virtual reality. A cyberpunk thriller about language, technology, and corporate dystopia."
+    },
+    {
+      "title": "The Book Thief",
+      "author": "Markus Zusak",
+      "description": "A young girl in Nazi Germany finds solace in stealing books and sharing them with others. Narrated by Death, a story about the power of words, kindness, and survival during war."
+    },
+    {
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "description": "A Roman emperor's private journal of Stoic philosophy on duty, mortality, and self-discipline. Timeless reflections on how to live with purpose, resilience, and inner peace."
+    },
+    {
+      "title": "The Colour of Magic",
+      "author": "Terry Pratchett",
+      "description": "A hapless wizard and a naive tourist stumble through a flat world carried on the backs of elephants atop a giant turtle. A satirical fantasy that parodies adventure fiction with wit and warmth."
+    },
+    {
+      "title": "Hyperion",
+      "author": "Dan Simmons",
+      "description": "Seven pilgrims share their stories as they journey to confront a mysterious creature on a distant world. A literary science fiction epic inspired by The Canterbury Tales, exploring time, faith, and love."
+    },
+    {
+      "title": "The Invisible Man",
+      "author": "H.G. Wells",
+      "description": "A scientist discovers how to make himself invisible but descends into madness and violence. A science fiction classic exploring the corrupting influence of power without accountability."
+    },
+    {
+      "title": "Norwegian Wood",
+      "author": "Haruki Murakami",
+      "description": "A college student in 1960s Tokyo navigates love, loss, and the grief of his best friend's suicide. A melancholic coming-of-age story about memory, desire, and the fragility of youth."
+    },
+    {
+      "title": "The Selfish Gene",
+      "author": "Richard Dawkins",
+      "description": "A revolutionary look at evolution from the gene's perspective, arguing that organisms are survival machines for their genes. Introduces the concept of memes and reshapes understanding of natural selection."
+    }
+  ]
+}

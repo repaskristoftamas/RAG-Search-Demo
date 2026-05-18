@@ -1,0 +1,27 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/shared/">
+    <Project Path="src/shared/BookStore.SharedKernel/BookStore.SharedKernel.csproj" />
+    <Project Path="src/shared/BookStore.Contracts/BookStore.Contracts.csproj" />
+  </Folder>
+  <Folder Name="/src/services/" />
+  <Folder Name="/src/services/catalog/">
+    <Project Path="src/services/catalog/BookStore.Catalog.Domain/BookStore.Catalog.Domain.csproj" />
+    <Project Path="src/services/catalog/BookStore.Catalog.Application/BookStore.Catalog.Application.csproj" />
+    <Project Path="src/services/catalog/BookStore.Catalog.Infrastructure/BookStore.Catalog.Infrastructure.csproj" />
+    <Project Path="src/services/catalog/BookStore.Catalog.Api/BookStore.Catalog.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/services/keyword-search/">
+    <Project Path="src/services/keyword-search/BookStore.KeywordSearch.Application/BookStore.KeywordSearch.Application.csproj" />
+    <Project Path="src/services/keyword-search/BookStore.KeywordSearch.Infrastructure/BookStore.KeywordSearch.Infrastructure.csproj" />
+    <Project Path="src/services/keyword-search/BookStore.KeywordSearch.Api/BookStore.KeywordSearch.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/services/semantic-search/">
+    <Project Path="src/services/semantic-search/BookStore.SemanticSearch.Application/BookStore.SemanticSearch.Application.csproj" />
+    <Project Path="src/services/semantic-search/BookStore.SemanticSearch.Infrastructure/BookStore.SemanticSearch.Infrastructure.csproj" />
+    <Project Path="src/services/semantic-search/BookStore.SemanticSearch.Api/BookStore.SemanticSearch.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/gateway/">
+    <Project Path="src/gateway/BookStore.Gateway/BookStore.Gateway.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Scalar.AspNetCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.Catalog.Application\BookStore.Catalog.Application.csproj" />
+    <ProjectReference Include="..\BookStore.Catalog.Infrastructure\BookStore.Catalog.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

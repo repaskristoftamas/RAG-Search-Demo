@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Scalar.AspNetCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.SemanticSearch.Application\BookStore.SemanticSearch.Application.csproj" />
+    <ProjectReference Include="..\BookStore.SemanticSearch.Infrastructure\BookStore.SemanticSearch.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
