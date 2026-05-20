@@ -1,4 +1,5 @@
 using BookStore.Gateway.Comparison;
+using BookStore.Gateway.HybridSearch;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,7 @@ builder.Services.AddHttpClient("SemanticSearch", client =>
     client.BaseAddress = new Uri(semanticBaseUrl));
 
 builder.Services.AddSingleton<SearchServiceClient>();
+builder.Services.AddSingleton<IRankFusionStrategy, ReciprocalRankFusionStrategy>();
 builder.Services.AddOpenApi();
 builder.Services.AddHealthChecks();
 
@@ -27,6 +29,7 @@ app.MapScalarApiReference();
 
 app.MapHealthChecks("/health").ExcludeFromDescription();
 app.MapComparisonEndpoints();
+app.MapHybridSearchEndpoints();
 app.MapReverseProxy();
 
 app.Run();
