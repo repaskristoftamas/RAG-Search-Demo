@@ -4,6 +4,8 @@ A microservices system comparing **keyword-based search** (PostgreSQL full-text 
 
 Built with .NET 9, Clean Architecture, DDD, Event-Driven Architecture, Docker.
 
+**Note:** Clean Architecture, DDD, EDA, RabbitMQ, MassTransit and microservices are not strictly necessary, but they are part of my agent-based project template, which helps me quickly build the basic architecture for projects using AI agents.
+
 ## Architecture
 
 ```
