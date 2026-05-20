@@ -2,6 +2,8 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="BookStore.Catalog.Application.Tests" />
+    <InternalsVisibleTo Include="BookStore.Catalog.Application.UnitTests" />
+    <InternalsVisibleTo Include="BookStore.Catalog.IntegrationTests" />
     <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
   </ItemGroup>
 

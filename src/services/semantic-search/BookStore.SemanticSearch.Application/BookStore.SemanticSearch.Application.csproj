@@ -1,6 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <InternalsVisibleTo Include="BookStore.SemanticSearch.IntegrationTests" />
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MassTransit" />
     <PackageReference Include="Mediator.Abstractions" />
     <PackageReference Include="Mediator.SourceGenerator">
