@@ -24,4 +24,14 @@
   <Folder Name="/src/gateway/">
     <Project Path="src/gateway/BookStore.Gateway/BookStore.Gateway.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BookStore.Catalog.Application.UnitTests/BookStore.Catalog.Application.UnitTests.csproj" />
+    <Project Path="tests/BookStore.Catalog.Domain.UnitTests/BookStore.Catalog.Domain.UnitTests.csproj" />
+    <Project Path="tests/BookStore.Catalog.IntegrationTests/BookStore.Catalog.IntegrationTests.csproj" />
+    <Project Path="tests/BookStore.KeywordSearch.IntegrationTests/BookStore.KeywordSearch.IntegrationTests.csproj" />
+    <Project Path="tests/BookStore.SemanticSearch.IntegrationTests/BookStore.SemanticSearch.IntegrationTests.csproj" />
+    <Project Path="tests/BookStore.Gateway.UnitTests/BookStore.Gateway.UnitTests.csproj" />
+    <Project Path="tests/BookStore.SharedKernel.UnitTests/BookStore.SharedKernel.UnitTests.csproj" />
+    <Project Path="tests/BookStore.EndToEndTests/BookStore.EndToEndTests.csproj" />
+  </Folder>
 </Solution>
