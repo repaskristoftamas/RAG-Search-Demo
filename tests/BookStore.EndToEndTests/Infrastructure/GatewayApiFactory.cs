@@ -38,14 +38,11 @@ public sealed class GatewayApiFactory : WebApplicationFactory<SearchServiceClien
 
 /// <summary>
 /// An <see cref="HttpMessageHandler"/> that returns a configurable canned response.
+/// Creates a fresh <see cref="HttpResponseMessage"/> per request so the content stream is never consumed twice.
 /// </summary>
 public sealed class MockHttpHandler : HttpMessageHandler
 {
-    private HttpResponseMessage _response = new(HttpStatusCode.OK)
-    {
-        Content = new StringContent("[]", Encoding.UTF8, "application/json")
-    };
-
+    private string _json = "[]";
     private Exception? _exception;
 
     /// <summary>
@@ -54,10 +51,7 @@ public sealed class MockHttpHandler : HttpMessageHandler
     public void RespondWith(string json)
     {
         _exception = null;
-        _response = new HttpResponseMessage(HttpStatusCode.OK)
-        {
-            Content = new StringContent(json, Encoding.UTF8, "application/json")
-        };
+        _json = json;
     }
 
     /// <summary>
@@ -72,8 +66,16 @@ public sealed class MockHttpHandler : HttpMessageHandler
     protected override Task<HttpResponseMessage> SendAsync(
         HttpRequestMessage request, CancellationToken cancellationToken)
     {
-        return _exception is not null
-            ? Task.FromException<HttpResponseMessage>(_exception)
-            : Task.FromResult(_response);
+        if (_exception is not null)
+        {
+            return Task.FromException<HttpResponseMessage>(_exception);
+        }
+
+        var response = new HttpResponseMessage(HttpStatusCode.OK)
+        {
+            Content = new StringContent(_json, Encoding.UTF8, "application/json")
+        };
+
+        return Task.FromResult(response);
     }
 }
