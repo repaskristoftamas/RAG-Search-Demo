@@ -1,4 +1,3 @@
-using System.Text.Json;
 using BookStore.Catalog.Api.Extensions;
 using BookStore.Catalog.Application.Books.Commands.CreateBook;
 using BookStore.Catalog.Application.Books.Commands.DeleteBook;
